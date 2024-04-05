@@ -68,6 +68,49 @@
     </li>
     @endcan
 
+    @can('admin_access')
+    <li class="nav-item">
+      <a data-bs-toggle="collapse" href="#two_d_control" class="nav-link text-white" aria-controls="twod_control" role="button" aria-expanded="false">
+        <i class="material-icons-round {% if page.brand == 'RTL' %}ms-2{% else %} me-2{% endif %}">manage_accounts</i>
+        <span class="nav-link-text ms-2 ps-1">2D စီမံရန်</span>
+      </a>
+      <div class="collapse show" id="twod_control">
+        <ul class="nav">
+          <li class="nav-item ">
+            <div class="collapse " id="two_d_control">
+              <ul class="nav nav-sm flex-column">
+                @can('admin_access')
+                <li class="nav-item">
+                  <a class="nav-link text-white " href="{{ route('admin.permissions.index')}}">
+                    <span class="sidenav-mini-icon"> 2D </span>
+                    <span class="sidenav-normal  ms-2  ps-1"> ထွက်ဂဏန်းများထဲ့ရန် </span>
+                  </a>
+                </li>
+                @endcan
+                @can('admin_access')
+                <li class="nav-item">
+                  <a class="nav-link text-white " href="{{ route('admin.roles.index') }}">
+                    <span class="sidenav-mini-icon"> U R </span>
+                    <span class="sidenav-normal  ms-2  ps-1"> User's Roles </span>
+                  </a>
+                </li>
+                @endcan
+                @can('admin_access')
+                <li class="nav-item">
+                  <a class="nav-link text-white " href="{{ route('admin.users.index')}}">
+                    <span class="sidenav-mini-icon"> U </span>
+                    <span class="sidenav-normal  ms-2  ps-1"> Users </span>
+                  </a>
+                </li>
+                @endcan
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </li>
+    @endcan
+
     <li class="nav-item">
         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="nav-link text-white">
             <span class="sidenav-mini-icon"> <i class="fas fa-right-from-bracket"></i> </span>

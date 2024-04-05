@@ -7,7 +7,9 @@
         <a href="{{ route('calendar') }}" class="text-white">
             <i class="fa-solid fa-calendar-days"></i>
         </a>
-        
+        <a href="{{ route('login') }}">
+            <i class="fas fa-right-to-bracket"></i>
+        </a>
     </div>
 <section class="py-4 px-2">
     <!-- Number Section -->

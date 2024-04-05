@@ -17,7 +17,7 @@
             <h4 class="fw-bolder">19623.003</h4>
         </div>
         <div class="text-center">
-            <h1 class="number">{{ $latest_result }}</h1>
+            <h1 class="number">{{ $latest_result ?? "--" }}</h1>
         </div>
         <div class="text-center">
             <h4 class="fw-bolder">VALUE</h4>

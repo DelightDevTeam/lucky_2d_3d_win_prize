@@ -17,7 +17,7 @@ class WelcomeController extends Controller
         $sessions = TwoDSession::with(['results' => function($query){
             $query->whereDate('created_at', Carbon::today());
         }])->get();
-        $latest_result = TwoDResult::latest()->first()->result;
+        $latest_result = TwoDResult::latest()->first();
         return view('welcome', compact('sessions', 'latest_result'));
     }
 

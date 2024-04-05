@@ -17,7 +17,7 @@
             <h4 class="fw-bolder">19623.003</h4>
         </div>
         <div class="text-center">
-            <h1 class="number">{{ $latest_result ?? "--" }}</h1>
+            <h1 class="number">{{ $latest_result->result ?? "--" }}</h1>
         </div>
         <div class="text-center">
             <h4 class="fw-bolder">VALUE</h4>
@@ -27,7 +27,11 @@
     <!-- Updated Section -->
     <div class=" d-flex align-items-center gap-1 ">
         <input type="checkbox" checked>
-        <h5 class="fw-bolder mt-2">Updated at : 2024-04-04 9:00:03 PM</h5>
+        @php
+            $today = Carbon\Carbon::today();
+
+        @endphp
+        <h5 class="fw-bolder mt-2">Updated at : {{ $today->format('d/m/Y') }} {{ $latest_result->session->name}}</h5>
     </div>
     <!-- Number Containers -->
     <div class="row text-center my-4">

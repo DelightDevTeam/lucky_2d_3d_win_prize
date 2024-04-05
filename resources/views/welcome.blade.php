@@ -7,7 +7,7 @@
         <a href="{{ route('calendar') }}" class="text-white">
             <i class="fa-solid fa-calendar-days"></i>
         </a>
-        <a href="{{ route('login') }}" class="text-white">
+        <a href="{{ route('home') }}" class="text-white">
             <i class="fas fa-right-to-bracket"></i>
         </a>
     </div>

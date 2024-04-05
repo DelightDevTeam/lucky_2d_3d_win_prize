@@ -1,7 +1,7 @@
 <div class="collapse navbar-collapse  w-auto h-auto" id="sidenav-collapse-main">
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a class="nav-link text-white" href="{{ route('profile') }}">
+      <a class="nav-link text-white" href="{{ route('home') }}">
         
         @if (Auth::user()->profile == null)
         <i class="fas fa-user-circle fa-2x"></i>
@@ -81,25 +81,17 @@
               <ul class="nav nav-sm flex-column">
                 @can('admin_access')
                 <li class="nav-item">
-                  <a class="nav-link text-white " href="{{ route('admin.permissions.index')}}">
+                  <a class="nav-link text-white " href="{{ route('admin.twoD-sessions.index')}}">
                     <span class="sidenav-mini-icon"> 2D </span>
-                    <span class="sidenav-normal  ms-2  ps-1"> ထွက်ဂဏန်းများထဲ့ရန် </span>
+                    <span class="sidenav-normal  ms-2  ps-1"> Sessions </span>
                   </a>
                 </li>
                 @endcan
                 @can('admin_access')
                 <li class="nav-item">
-                  <a class="nav-link text-white " href="{{ route('admin.roles.index') }}">
-                    <span class="sidenav-mini-icon"> U R </span>
-                    <span class="sidenav-normal  ms-2  ps-1"> User's Roles </span>
-                  </a>
-                </li>
-                @endcan
-                @can('admin_access')
-                <li class="nav-item">
-                  <a class="nav-link text-white " href="{{ route('admin.users.index')}}">
-                    <span class="sidenav-mini-icon"> U </span>
-                    <span class="sidenav-normal  ms-2  ps-1"> Users </span>
+                  <a class="nav-link text-white " href="{{ route('admin.twoD-results.index')}}">
+                    <span class="sidenav-mini-icon"> 2D </span>
+                    <span class="sidenav-normal  ms-2  ps-1"> Results </span>
                   </a>
                 </li>
                 @endcan

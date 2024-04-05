@@ -4,11 +4,14 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\RolesController;
+use App\Http\Controllers\Admin\TwoDResultController;
+use App\Http\Controllers\Admin\TwoDSessionController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\User\WelcomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -19,6 +22,8 @@ require __DIR__ . '/auth.php';
 Route::get('/home', [AdminController::class, 'index'])->name('home');
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
 Route::get('/', [App\Http\Controllers\User\WelcomeController::class, 'index'])->name('welcome');
+Route::get('/calendar', [App\Http\Controllers\User\WelcomeController::class, 'calendar'])->name('calendar');
+
 
 
 
@@ -33,6 +38,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'App\Http\Co
   Route::delete('users/destroy', [UsersController::class, 'massDestroy'])->name('users.massDestroy');
   Route::resource('users', UsersController::class);
   Route::put('users/{id}/ban', [UsersController::class, 'banUser'])->name('users.ban');
+
+  //2d sessions
+  Route::resource('twoD-sessions', TwoDSessionController::class);
+
+  //2d results
+  Route::resource('twoD-results', TwoDResultController::class);
 });
 
 
